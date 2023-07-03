@@ -4,15 +4,18 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
+    "android": "export ANDROID_HOME=/home/john/Android/Sdk && expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
   },
   "dependencies": {
     "expo": "~48.0.18",
     "expo-status-bar": "~1.4.4",
+    "nativewind": "^2.0.11",
     "react": "18.2.0",
-    "react-native": "0.71.8"
+    "react-native": "0.71.8",
+    "react-native-svg": "13.4.0",
+    "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
