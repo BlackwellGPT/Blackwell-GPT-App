@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   secondtitle: {
     padding: 5,
     paddingBottom: 0,
-    paddingTop: 20,
+    paddingTop: 0,
     fontSize: 20,
     textAlign: "left",
     color: "coral",
@@ -81,9 +81,8 @@ const styles = StyleSheet.create({
     margin: 10,
     marginTop: 10,
     marginBottom: 10,
-    borderColor: "grey",
-    borderStyle: 'dashed',
-    borderRadius: 5,
+    borderColor: "black",
+    borderRadius: 20,
     overflow: 'hidden',
     alignSelf: 'start',
     padding: 10
