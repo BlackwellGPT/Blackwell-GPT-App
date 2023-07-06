@@ -60,10 +60,10 @@ const styles = StyleSheet.create({
     margin: 10,
     marginTop: 20,
     marginBottom: 40,
-    borderColor: "grey",
+    borderColor: "black",
     borderStyle: 'dashed',
     borderRadius: 5,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   imageStyle: {
     width: 300,
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     aspectRatio: 1.5,
     marginBottom: 20,
     borderRadius: 19,
-    alignSelf: 'left',
+    alignSelf: 'center',
     marginTop: 10,
     margin: 10
   },
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     borderStyle: 'dashed',
     borderRadius: 5,
     overflow: 'hidden',
-    alignSelf: 'left',
+    alignSelf: 'start',
     padding: 10
   },
 });
