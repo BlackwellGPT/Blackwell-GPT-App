@@ -5,7 +5,7 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 const HowTo = () => {
   return (
     <View>
-      <Text style={styles.textStyle}>USAGE GUIDE</Text>
+      <Text style={styles.textStyle}>HOW-TO</Text>
       <Text style= {styles.header}>This is a guide on how to use the app to its full capability.</Text>
       <View style ={styles.viewStyle}>
         <Text style={styles.text}>When you first enter Blackwell GPT, you may feel a little overwhelmed, but fear not!</Text>
