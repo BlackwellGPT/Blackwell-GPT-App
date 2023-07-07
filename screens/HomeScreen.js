@@ -1,8 +1,11 @@
 import { View, StyleSheet, StatusBar } from 'react-native';
+import { Platform } from 'react-native';
 import HomeNav from '../components/HomeNav';
 import ChatContents from '../components/ChatContents';
 import DynamicMessageRow from '../components/DynamicMessageRow';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
+
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
 
 const CustomStatusBar = (
   {
@@ -40,6 +43,7 @@ function HomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: STATUSBAR_HEIGHT + (Platform.OS === 'ios' ? 10 : 0),
     overflow: "hidden"
   },
   shadow: {
