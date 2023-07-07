@@ -11,10 +11,10 @@ const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
 function HomeScreen({ navigation }) {
   return (
     <View style={styles.container} className="flex-1 flex max-h-screen flex-col">
-      <HomeNav navigation={navigation}/>
+      <HomeNav navigation={navigation} />
       <View className="flex flex-col flex-1">
-        <ChatContents/>
-        <DynamicMessageRow/>
+        <ChatContents />
+        <DynamicMessageRow />
       </View>
       <StatusBar style="auto" backgroundColor='#fff' />
     </View>
