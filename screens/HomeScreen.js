@@ -43,7 +43,7 @@ function HomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: STATUSBAR_HEIGHT + (Platform.OS === 'ios' ? 10 : 0),
+    paddingTop: STATUSBAR_HEIGHT + (Platform.OS === 'ios' ? 10 : 0),
     overflow: "hidden"
   },
   shadow: {
