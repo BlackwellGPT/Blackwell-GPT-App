@@ -4,7 +4,7 @@ import { Platform, NativeModules } from 'react-native';
 const { StatusBarManager } = NativeModules;
 import HomeNav from '../components/HomeNav';
 import ChatContents from '../components/ChatContents';
-import DynamicMessageRow from './DynamicMessageRow';
+import DynamicMessageRow from '../components/DynamicMessageRow';
 
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
 
