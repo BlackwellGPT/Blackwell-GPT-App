@@ -1,29 +1,45 @@
-import { StatusBar } from 'expo-status-bar';
-import { View, StyleSheet } from 'react-native';
-import { Platform, NativeModules } from 'react-native';
-const { StatusBarManager } = NativeModules;
+import { View, StyleSheet, StatusBar } from 'react-native';
 import HomeNav from '../components/HomeNav';
 import ChatContents from '../components/ChatContents';
 import DynamicMessageRow from '../components/DynamicMessageRow';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
-const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
+const CustomStatusBar = (
+  {
+    backgroundColor,
+    barStyle = "dark-content",
+  }
+) => {
+
+  const insets = useSafeAreaInsets();
+
+  return (
+    <View style={{ height: insets.top, backgroundColor }}>
+      <StatusBar
+        animated={true}
+        backgroundColor={backgroundColor}
+        barStyle={barStyle} />
+    </View>
+  );
+}
 
 function HomeScreen({ navigation }) {
   return (
-    <View style={styles.container} className="flex-1 flex max-h-screen flex-col">
-      <HomeNav navigation={navigation} />
-      <View className="flex flex-col flex-1">
-        <ChatContents />
-        <DynamicMessageRow />
+    <SafeAreaProvider>
+      <View style={styles.container} className="flex-1 flex max-h-screen flex-col">
+        <HomeNav navigation={navigation} />
+        <View className="flex flex-col flex-1">
+          <ChatContents />
+          <DynamicMessageRow />
+        </View>
       </View>
-      <StatusBar style="dark" backgroundColor='#fff' />
-    </View>
+      <CustomStatusBar backgroundColor="#fff" />
+    </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: STATUSBAR_HEIGHT + (Platform.OS === 'ios' ? 10 : 0),
     overflow: "hidden"
   },
   shadow: {
