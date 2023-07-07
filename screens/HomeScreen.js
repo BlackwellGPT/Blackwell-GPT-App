@@ -16,7 +16,7 @@ function HomeScreen({ navigation }) {
         <ChatContents />
         <DynamicMessageRow />
       </View>
-      <StatusBar style="auto" backgroundColor='#fff' />
+      <StatusBar style="dark" backgroundColor='#fff' />
     </View>
   );
 }
