@@ -4,7 +4,7 @@ import { Svg, Path } from 'react-native-svg';
 export default function DynamicMessageRow() {
     return (
         <View>
-            <View className="mx-auto w-full bg-white">
+            <View className="mx-auto w-full bg-white pb-8">
                 <View className="space-y-4 border-t border-gray-300 p-2">
                     <View className="bg-background relative flex max-h-60 w-full grow flex-row overflow-hidden gap-2">
                         <TouchableOpacity>
