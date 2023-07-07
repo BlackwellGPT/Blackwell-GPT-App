@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Svg, Path } from 'react-native-svg';
+import { Platform } from 'react-native';
 import * as NavigationBar from 'expo-navigation-bar';
 
 NavigationBar.setBackgroundColorAsync("#fff");
@@ -27,15 +28,16 @@ export default function HomeNav({ navigation }) {
 
 const styles = StyleSheet.create({
     shadow: {
-      shadowColor: "#000",
-      shadowOffset: {
-        width: 0,
-        height: 3,
-      },
-      shadowOpacity: 0.29,
-      shadowRadius: 4.65,
-  
-      elevation: 7,
-      backgroundColor: "white",
+        paddingTop: Platform.OS === 'ios' ? 20 : 0,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.29,
+        shadowRadius: 4.65,
+
+        elevation: 7,
+        backgroundColor: "white",
     }
-  })
+})
