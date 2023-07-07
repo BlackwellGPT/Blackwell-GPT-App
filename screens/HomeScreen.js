@@ -5,8 +5,6 @@ import ChatContents from '../components/ChatContents';
 import DynamicMessageRow from '../components/DynamicMessageRow';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
-const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
-
 const CustomStatusBar = (
   {
     backgroundColor,
@@ -43,7 +41,7 @@ function HomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: STATUSBAR_HEIGHT + (Platform.OS === 'ios' ? 10 : 0),
+    paddingTop: Platform.OS === 'ios' ? 20 : 0,
     overflow: "hidden"
   },
   shadow: {
