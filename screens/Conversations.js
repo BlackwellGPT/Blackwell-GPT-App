@@ -1,9 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 
-function Conversations() {
+export default function Conversations(){
   return (
     <StatusBar style="auto" />
   );
 }
-
-export default Conversations;
