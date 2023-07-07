@@ -28,7 +28,7 @@ export default function HomeNav({ navigation }) {
 
 const styles = StyleSheet.create({
     shadow: {
-        paddingTop: Platform.OS === 'ios' ? 20 : 0,
+        paddingTop: Platform.OS === 'ios' ? 44 : 0,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,

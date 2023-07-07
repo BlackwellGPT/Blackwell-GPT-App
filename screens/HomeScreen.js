@@ -1,4 +1,4 @@
-import { View, StyleSheet, StatusBar } from 'react-native';
+import { View, StatusBar } from 'react-native';
 import HomeNav from '../components/HomeNav';
 import ChatContents from '../components/ChatContents';
 import DynamicMessageRow from '../components/DynamicMessageRow';
@@ -37,20 +37,5 @@ function HomeScreen({ navigation }) {
     </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  shadow: {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.29,
-    shadowRadius: 4.65,
-
-    elevation: 7,
-    backgroundColor: "white",
-  }
-})
 
 export default HomeScreen;
