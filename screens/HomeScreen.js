@@ -26,6 +26,7 @@ const CustomStatusBar = (
 function HomeScreen({ navigation }) {
   return (
     <SafeAreaProvider>
+      <CustomStatusBar backgroundColor="#fff" />
       <View className="flex-1 flex max-h-screen flex-col overflow-hidden">
         <HomeNav navigation={navigation} />
         <View className="flex flex-col flex-1">
@@ -33,7 +34,6 @@ function HomeScreen({ navigation }) {
           <DynamicMessageRow />
         </View>
       </View>
-      <CustomStatusBar backgroundColor="#fff" />
     </SafeAreaProvider>
   );
 }
