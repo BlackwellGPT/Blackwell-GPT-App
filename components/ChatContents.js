@@ -15,7 +15,7 @@ export default function ChatContents() {
                                 <Text className="font-extrabold my-1">Interpret a lung scan</Text>
                             </TouchableOpacity>
                             <TouchableOpacity className="flex flex-row h-auto w-full items-center justify-center rounded-sm p-1 text-base font-medium shadow-none transition-colors border border-[#d1d5db] bg-white">
-                                <Text className="font-extrabold my-1">Help treat a migrane</Text>
+                                <Text className="font-extrabold my-1">Help treat a migraine</Text>
                             </TouchableOpacity>
                             <TouchableOpacity className="flex flex-row h-auto w-full items-center justify-center rounded-sm p-1 text-base font-medium shadow-none transition-colors border border-[#d1d5db] bg-white">
                                 <Text className="font-extrabold my-1">How do I perform CPR?</Text>
