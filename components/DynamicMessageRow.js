@@ -1,6 +1,5 @@
-import { View, TouchableOpacity, TextInput, Keyboard } from 'react-native';
-import { Svg, Path } from 'react-native-svg';
-import React, { useEffect, useState } from 'react';
+import { Keyboard } from 'react-native';
+import { useEffect, useState } from 'react';
 
 export default function DynamicMessageRow() {
     const [isKeyboardOpen, setKeyboardOpen] = useState(false);
@@ -9,15 +8,12 @@ export default function DynamicMessageRow() {
         const keyboardDidShowListener = Keyboard.addListener(
             'keyboardDidShow',
             () => {
-                console.log("open")
                 setKeyboardOpen(true);
             }
         );
 
         const keyboardDidHideListener = Keyboard.addListener(
             'keyboardDidHide',
-            () => {
-                console.log("close")
                 setKeyboardOpen(false);
             }
         );
