@@ -9,6 +9,7 @@ export default function DynamicMessageRow() {
         const keyboardDidShowListener = Keyboard.addListener(
             'keyboardDidShow',
             () => {
+                console.log("open")
                 setKeyboardOpen(true);
             }
         );
@@ -16,6 +17,7 @@ export default function DynamicMessageRow() {
         const keyboardDidHideListener = Keyboard.addListener(
             'keyboardDidHide',
             () => {
+                console.log("close")
                 setKeyboardOpen(false);
             }
         );
@@ -28,7 +30,7 @@ export default function DynamicMessageRow() {
 
     return (
         <View>
-            <View className="mx-auto w-full bg-white" style={isKeyboardOpen ? "padding-bottom: 0;" : "padding-bottom: 1rem;"}>
+            <View className="mx-auto w-full bg-white" style={isKeyboardOpen ? "padding-bottom: 0px;" : "padding-bottom: 1rem;"}>
                 <View className="space-y-4 border-t border-gray-300 p-2">
                     <View className="bg-background relative flex max-h-60 w-full grow flex-row overflow-hidden gap-2">
                         <TouchableOpacity>
