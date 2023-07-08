@@ -1,4 +1,4 @@
-import { View, StatusBar } from 'react-native';
+import { View, StatusBar, KeyboardAvoidingView, Platform } from 'react-native';
 import HomeNav from '../components/HomeNav';
 import ChatContents from '../components/ChatContents';
 import DynamicMessageRow from '../components/DynamicMessageRow';
@@ -25,16 +25,24 @@ const CustomStatusBar = (
 
 function HomeScreen({ navigation }) {
   return (
-    <SafeAreaProvider>
-      <CustomStatusBar backgroundColor="#fff" />
-      <View className="flex-1 flex max-h-screen flex-col overflow-hidden">
-        <HomeNav navigation={navigation} />
-        <View className="flex flex-col flex-1">
-          <ChatContents />
-          <DynamicMessageRow />
+    <KeyboardAvoidingView
+      className="flex-1"
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    >
+      <SafeAreaProvider>
+        <CustomStatusBar backgroundColor="#fff" />
+        <View className="flex-1 flex max-h-screen flex-col overflow-hidden">
+          <HomeNav navigation={navigation} />
+
+          <View className="flex flex-col flex-1">
+            <ChatContents />
+            <DynamicMessageRow />
+          </View>
+
         </View>
-      </View>
-    </SafeAreaProvider>
+      </SafeAreaProvider >
+    </KeyboardAvoidingView>
+
   );
 }
 
