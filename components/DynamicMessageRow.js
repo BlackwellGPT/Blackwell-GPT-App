@@ -49,10 +49,12 @@ export default function DynamicMessageRow() {
                             <TextInput placeholder='Send a message.'></TextInput>
                         </View>
                         <TouchableOpacity>
-                            <View className=" bg-gray-200 p-2 rounded-full opacity-40">
-                                <Svg fill="#000000" viewBox="0 0 256 256" className="w-6 h-6">
-                                    <Path d="M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0Zm40,143.6V232a8,8,0,0,1-16,0V207.6A80.11,80.11,0,0,1,48,128a8,8,0,0,1,16,0,64,64,0,0,0,128,0,8,8,0,0,1,16,0A80.11,80.11,0,0,1,136,207.6Z"></Path>
-                                </Svg>
+                            <View className="bg-blue-400 p-2 rounded-full">
+                                <View className="w-6 h-6 flex justify-center">
+                                    <Svg fill="#fff" viewBox="0 0 256 256" className="w-6 h-5" preserveAspectRatio='none'>
+                                        <Path d="M223.87,114l-168-95.89A16,16,0,0,0,32.93,37.32l31,90.47a.42.42,0,0,0,0,.1.3.3,0,0,0,0,.1l-31,90.67A16,16,0,0,0,48,240a16.14,16.14,0,0,0,7.92-2.1l167.91-96.05a16,16,0,0,0,.05-27.89ZM48,224l0-.09L78.14,136H136a8,8,0,0,0,0-16H78.22L48.06,32.12,48,32l168,95.83Z"></Path>
+                                    </Svg>
+                                </View>
                             </View>
                         </TouchableOpacity>
                     </View>
