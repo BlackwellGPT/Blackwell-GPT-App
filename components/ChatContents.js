@@ -73,6 +73,9 @@ const ChatContents = forwardRef((props, ref) => {
     },
     newChat () {
       setMessages([])
+      if(promiseResolve) {
+        promiseResolve()
+      }
       if (typeof client !== "undefined") {
         client.close()
       }
