@@ -88,6 +88,6 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     display: 'flex',
     flexDirection: 'row',
-    gap: 12
+    gap: 4
   }
 })
