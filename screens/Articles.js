@@ -2,11 +2,11 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Text, StyleSheet, View, Image } from 'react-native';
 
-export default function HowTo() {
+export default function Articles() {
   return (
     <View style = {styles.viewStyle}>
       <Text style = {styles.textStyle}>
-        To use Blackwell GPT, click on the text box on the home page and type in your medical-related questions. In the top right of the screen, you can access past conversations, and use the plus button to create a new conversation.
+        Articles of the week
       </Text>
       <StatusBar style="dark" />
     </View>
@@ -16,9 +16,9 @@ export default function HowTo() {
 const styles = StyleSheet.create({
   textStyle: {
     // Add your desired styles for the text here
-    fontSize: 16,
+    fontSize: 25,
     color: '#333',
-    textAlign: 'left',
+    textAlign: 'center',
     marginVertical: 10,
     padding: 30,
     paddingTop: 10,
