@@ -1,10 +1,10 @@
 import React from 'react'
 const { forwardRef, useImperativeHandle } = React
-import { Text, View, TouchableOpacity, FlatList } from 'react-native'
+import { Text, View, TouchableOpacity, FlatList, ScrollView } from 'react-native'
 import { w3cwebsocket as W3CWebSocket } from 'websocket'
 import ChatBubble from './ChatBubble'
 
-const websocketUrl = 'ws://192.168.4.23:9000'
+const websocketUrl = 'ws://10.0.0.245:9000'
 
 const ChatContents = forwardRef((props, ref) => {
   const [messages, setMessages] = React.useState([])
@@ -86,8 +86,8 @@ const ChatContents = forwardRef((props, ref) => {
   return (
     <View className='flex-1 overflow-auto'>
       {messages.length === 0 && (
-        <View className='pt-8'>
-          <View className='mx-auto max-w-2xl px-4'>
+        <ScrollView overScrollMode='never'>
+          <View className='mx-auto max-w-2xl px-4 my-8'>
             <View className='border-2 p-6 border-gray-300 border-dashed'>
               <Text className='mb-2 text-lg font-semibold'>Welcome!</Text>
               <Text className='mb-2'>
@@ -120,7 +120,7 @@ const ChatContents = forwardRef((props, ref) => {
               </Text>
             </View>
           </View>
-        </View>
+        </ScrollView>
       )}
       {messages.length !== 0 && (
         <FlatList
