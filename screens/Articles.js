@@ -1,15 +1,15 @@
-import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Text, StyleSheet, View, Image } from 'react-native';
+import { Text, StyleSheet, View, Image, SafeAreaView} from 'react-native';
+import React, {Component} from 'react';
+import { WebView } from 'react-native-webview';
 
 export default function Articles() {
   return (
-    <View style = {styles.viewStyle}>
-      <Text style = {styles.textStyle}>
-        Articles of the week
-      </Text>
-      <StatusBar style="dark" />
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+        <WebView 
+          source={{ uri: 'https://cf-workers-news.johnomeara40.workers.dev/topics/CAAqIQgKIhtDQkFTRGdvSUwyMHZNR3QwTlRFU0FtVnVLQUFQAQ?hl=en-US&gl=US&ceid=US%3Aen' }} 
+        />
+    </SafeAreaView>
   );
 }
 
