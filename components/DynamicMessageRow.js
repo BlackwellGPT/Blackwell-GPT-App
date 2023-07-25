@@ -70,10 +70,7 @@ export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat, 
   return (
     <View>
       <View
-        className='mx-auto w-full bg-white'
-        style={
-          isKeyboardOpen ? 'padding-bottom: 0px;' : 'padding-bottom: 1rem;'
-        }
+        className={'mx-auto w-full bg-white ' + (isKeyboardOpen ? "pb-0" : "pb-4")}
       >
         <View className='space-y-4 border-t border-gray-300 p-2'>
           <View className='bg-background relative flex max-h-60 w-full grow flex-row overflow-hidden items-center gap-2'>
