@@ -1,5 +1,4 @@
 import { View, StatusBar, KeyboardAvoidingView, Platform } from 'react-native'
-import { Text } from 'react-native'
 import React from 'react'
 import HomeNav from '../components/HomeNav'
 import ChatContents from '../components/ChatContents'

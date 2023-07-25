@@ -5,6 +5,8 @@ import HomeScreen from './screens/HomeScreen';
 import HowTo from './screens/HowTo';
 import Conversations from './screens/Conversations';
 import Articles from './screens/Articles';
+import Login from './screens/Login';
+import Signup from './screens/Signup';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,6 +14,8 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} options={{headerShown: false}} />
+        <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}} />
         <Stack.Screen name="Usage Guide" component={HowTo} />
         <Stack.Screen name="Past Conversations" component={Conversations} />

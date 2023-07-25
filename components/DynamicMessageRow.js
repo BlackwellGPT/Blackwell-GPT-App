@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, TouchableOpacity, TextInput, Keyboard, Text, StyleSheet } from 'react-native'
+import { View, TouchableOpacity, TextInput, Keyboard, Text, ScrollView } from 'react-native'
 import { Svg, Path } from 'react-native-svg'
 import { useEffect, useState } from 'react'
 
