@@ -1,9 +1,10 @@
 import React from 'react'
-import { View, TouchableOpacity, TextInput, Keyboard } from 'react-native'
+import { View, TouchableOpacity, TextInput, Keyboard, Text, StyleSheet } from 'react-native'
 import { Svg, Path } from 'react-native-svg'
 import { useEffect, useState } from 'react'
 
-export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat }) {
+
+export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat, navigation }) {
   const [collapsed, setCollapsed] = React.useState(false)
   const [currentlyRecieving, setCurrentlyRecieving] = React.useState(false)
   const [disabled, setDisabled] = React.useState(true)
@@ -65,6 +66,7 @@ export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat }
     }
   })
 
+
   return (
     <View>
       <View
@@ -75,6 +77,7 @@ export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat }
       >
         <View className='space-y-4 border-t border-gray-300 p-2'>
           <View className='bg-background relative flex max-h-60 w-full grow flex-row overflow-hidden items-center gap-2'>
+            
             {collapsed && (
               <TouchableOpacity onPress={show}>
                 <View className='bg-gray-200 p-2 rounded-full opacity-40'>
@@ -93,6 +96,7 @@ export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat }
                 </View>
               </TouchableOpacity>
             )}
+            
             {!collapsed && (
               <TouchableOpacity>
                 <View className='bg-gray-200 p-2 rounded-full opacity-40'>
@@ -102,6 +106,7 @@ export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat }
                 </View>
               </TouchableOpacity>
             )}
+            
             <View className=' bg-gray-200 rounded-xl p-2 opacity-60 flex-1 overflow-hidden'>
               <TextInput
                 placeholder='Send a message.'
@@ -110,6 +115,7 @@ export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat }
                 value={textInputValue}
               ></TextInput>
             </View>
+            
             <TouchableOpacity
               onPress={sendCurrentMessage}
               disabled={disabled || currentlyRecieving}
@@ -132,6 +138,7 @@ export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat }
                 </View>
               </View>
             </TouchableOpacity>
+            
           </View>
         </View>
       </View>

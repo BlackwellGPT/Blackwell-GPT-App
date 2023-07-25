@@ -52,6 +52,7 @@ function HomeScreen ({ navigation }) {
               sendMessage={sendMessage}
               scrollToEnd={scrollToEnd}
               newChat={newChat}
+              navigation={navigation}
             />
           </View>
         </View>

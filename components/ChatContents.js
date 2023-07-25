@@ -127,15 +127,17 @@ const ChatContents = forwardRef((props, ref) => {
           ref={flatListRef}
           overScrollMode='never'
           className='pt-2'
-          ListFooterComponent={<View className='h-5'></View>}
+          ListFooterComponent={<View></View>}
           data={messages}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
             <ChatBubble
               bolden={item.id % 2 === 0 ? true : false}
               contents={item.content}
+              
             ></ChatBubble>
           )}
+          
         />
       )}
     </View>

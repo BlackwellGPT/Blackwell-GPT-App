@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, Image } from 'react-native'
+import { Text, View, Image, TouchableOpacity } from 'react-native'
 
 export default function ChatBubble ({ contents, bolden = false }) {
   return (
@@ -16,7 +16,11 @@ export default function ChatBubble ({ contents, bolden = false }) {
             source={require('../assets/progress.gif')}
           />
         )}
-        {contents !== '' && <Text>{contents}</Text>}
+        {contents !== '' && (
+          <Text>{contents}</Text>
+
+        )}
+        {contents !== '' && !bolden && !bolden && (<TouchableOpacity><Text style = {{fontSize: 10, paddingTop: 10}}>Related videos</Text></TouchableOpacity>)}
       </View>
     </View>
   )
