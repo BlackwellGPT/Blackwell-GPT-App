@@ -4,7 +4,7 @@ import { Text, View, TouchableOpacity, FlatList, ScrollView } from 'react-native
 import { w3cwebsocket as W3CWebSocket } from 'websocket'
 import ChatBubble from './ChatBubble'
 
-const websocketUrl = 'ws://192.168.4.23:9000'
+const websocketUrl = 'ws://10.0.0.245:9000'
 
 const ChatContents = forwardRef((props, ref) => {
   const [messages, setMessages] = React.useState([])
