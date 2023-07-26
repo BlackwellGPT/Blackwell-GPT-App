@@ -88,7 +88,7 @@ const ChatContents = forwardRef((props, ref) => {
       {messages.length === 0 && (
         <ScrollView overScrollMode='never'>
           <View className='mx-auto max-w-2xl px-4 my-8'>
-            <View className='border-2 p-6 border-gray-300 border-dashed'>
+            <View className='border-2 p-6 border-blue-300 border-dashed'>
               <Text className='mb-2 text-lg font-semibold'>Welcome!</Text>
               <Text className='mb-2'>
                 Blackwell GPT is a chat-based model that is aimed at making
