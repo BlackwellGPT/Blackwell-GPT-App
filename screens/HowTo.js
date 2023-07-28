@@ -37,12 +37,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
     padding: 30,
     backgroundColor: '#ddd',
   },
  box_1: {
-    padding: 80,
+    padding: 10,
     backgroundColor: 'skyblue',
     borderTopLeftRadius: 17,
     borderBottomRightRadius: 17,
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 17,
   },
   box_2: {
-    padding: 110,
+    padding: 20,
     backgroundColor: 'skyblue',
     borderTopLeftRadius: 17,
     borderBottomRightRadius: 17,
