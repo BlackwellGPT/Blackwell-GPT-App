@@ -13,8 +13,9 @@ export default function HomeNav ({ navigation }) {
       className='sticky top-0 z-50 flex h-14 w-full shrink-0 items-center justify-center border-b border-gray-300 px-2'
     >
       <View className='flex w-full px-2 flex-row gap-[6px]'>
-        <Text className='text-2xl font-bold'>Blackwell</Text>
-        <Text className='text-2xl font-bold text-blue-500'>GPT</Text>
+        <Text className='text-2xl font-bold text-3xl text-lime-500'>Blackwell</Text>
+        
+        
         <View className='flex-1'></View>
         <TouchableOpacity onPress={() => navigation.navigate('Articles')}>
           <Svg

@@ -21,7 +21,7 @@ export default function HowTo() {
                   <Text style = {styles.bodyText}>To use Blackwell GPT, use the message field (accepts voice and text input) located in the bottom bar of the homepage. You can also click on the image button to its left, which accepts images of _____ and can identify ______.</Text>
                   <Text style = {styles.bodyText}>The articles tab in the top right shows interesting health articles, and the past conversations button allows you to access your conversation history.</Text>
                 </View>
-                <Text style = {{fontSize: 30, alignSelf: 'auto', padding: 35, paddingBottom: 5, paddingTop: 20, color: "grey", fontWeight: 'bold'}}>FAQS</Text>
+                <Text style = {{fontSize: 30, alignSelf: 'center', padding: 35, paddingBottom: 5, paddingTop: 20, color: "grey", fontWeight: 'bold'}}>FAQS</Text>
                 <Text style = {styles.question}>Q: What is Blackwell GPT trained on? {'\n'}{'\n'} A: Blackwell GPT is a GPT-3.5-Turbo model from Open AI that has been trained on thousands of real conversations between doctors and patients.</Text>                
               </View>
 
