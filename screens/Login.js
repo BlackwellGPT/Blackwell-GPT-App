@@ -24,7 +24,7 @@ export default function Login ({ navigation }) {
           <View>
             <View className='flex w-full px-2 flex-row gap-[6px] justify-center'>
               <Text className='text-4xl font-bold'>Blackwell</Text>
-              <Text className='text-4xl font-bold text-green-500 mb-4'>GPT</Text>
+              <Text className='text-4xl font-bold text-blue-500 mb-4'>GPT</Text>
             </View>
             {showErrorMessage && (
               <Text className='text-red-500 font-bold text-xl text-center'>
