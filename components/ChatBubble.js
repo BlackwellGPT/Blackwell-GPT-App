@@ -1,8 +1,8 @@
 import React from 'react'
-import { Text, View, Image, TouchableOpacity } from 'react-native'
+import { Text, View, StyleSheet, TouchableOpacity, Image, Linking } from 'react-native'
 import { Svg, Path } from 'react-native-svg'
-
-export default function ChatBubble ({ contents, bolden = false }) {
+export default function ChatBubble ({ contents, bolden = false, prevMsg }) {
+  let MY_URL = "https://www.youtube.com/results?search_query=" + prevMsg
   return (
     <View>
       <View
@@ -18,8 +18,9 @@ export default function ChatBubble ({ contents, bolden = false }) {
           />
         )}
         {contents !== '' && <Text>{contents}</Text>}
-        {contents !== '' && !bolden && !bolden && (
-          <TouchableOpacity className='flex flex-row gap-1 items-center pt-2'>
+        {contents !== '' && !bolden && (
+          <TouchableOpacity onPress={() => Linking.openURL(MY_URL)} className='flex flex-row gap-1 items-center pt-2'>
+            
             <Text className='text-blue-400 font-bold'>Related videos</Text>
             <Svg
               xmlns='http://www.w3.org/2000/svg'

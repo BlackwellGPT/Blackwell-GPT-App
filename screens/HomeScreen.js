@@ -46,7 +46,7 @@ function HomeScreen ({ navigation }) {
           <HomeNav navigation={navigation} />
 
           <View className='flex flex-col flex-1'>
-            <ChatContents ref={chatRef} />
+            <ChatContents ref={chatRef}/>
             <DynamicMessageRow
               sendMessage={sendMessage}
               scrollToEnd={scrollToEnd}

@@ -134,7 +134,8 @@ const ChatContents = forwardRef((props, ref) => {
             <ChatBubble
               bolden={item.id % 2 === 0 ? true : false}
               contents={item.content}
-              
+              prevMsg = {item.id == 0 ? "" : messages[item.id-1].content}
+
             ></ChatBubble>
           )}
           
