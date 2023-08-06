@@ -7,6 +7,7 @@ import Conversations from './screens/Conversations';
 import Articles from './screens/Articles';
 import Login from './screens/Login';
 import Signup from './screens/Signup';
+import Settings from './screens/Settings'
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,7 @@ function App() {
         <Stack.Screen name="Usage Guide" component={HowTo} />
         <Stack.Screen name="Past Conversations" component={Conversations} />
         <Stack.Screen name="Articles" component={Articles} />
+        <Stack.Screen name='Settings' component = {Settings} />
       </Stack.Navigator>
     </NavigationContainer>
   );
