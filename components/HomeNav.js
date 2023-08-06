@@ -18,8 +18,8 @@ export default function HomeNav ({ navigation }) {
         <View className='flex-1'></View>
         <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
           <Svg  
-            width={32}
-            height={32}
+            width={35}
+            height={35}
             viewBox='0 0 256 256'
             strokeWidth={2}
             className='fill-blue-500 stroke-blue-500'
