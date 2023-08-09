@@ -1,8 +1,6 @@
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 import { Svg, Path } from 'react-native-svg'
 import * as NavigationBar from 'expo-navigation-bar'
-import Settings from '../screens/Settings'
-
 
 NavigationBar.setBackgroundColorAsync('#fff')
 NavigationBar.setButtonStyleAsync('dark')
