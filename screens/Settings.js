@@ -31,10 +31,10 @@ const styles = StyleSheet.create({
         backgroundWidth: 2,
         margin: 30,
         padding: 20,
-        borderWidth: 1,
+        borderWidth: 2,
         borderRadius: 10,
         borderColor: 'lightblue',
-        borderStyle: 'dashed'
+        borderStyle: 'dashed',
 
     },
     textStyle: {
