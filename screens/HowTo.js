@@ -46,21 +46,21 @@ const styles = StyleSheet.create({
     padding: 20,
     paddingTop: 20,
     margin: 20,
-    backgroundColor: 'mintcream',
+    backgroundColor: '#f5fffa',
     borderRadius: 10,
-    borderColor: 'mintcream'
+    borderColor: '#f5fffa'
 
   }, 
   question:{
     padding: 10,
     fontSize: 15,
     color: 'black',
-    backgroundColor: 'mintcream',
+    backgroundColor: '#f5fffa',
     margin: 20,
     borderRadius: 10,
     borderWidth: 1,
     overflow: "hidden",
-    borderColor: 'mintcream',
+    borderColor: '#f5fffa',
     marginTop: 10
   },
 });

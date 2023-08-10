@@ -9,7 +9,7 @@ export default function Settings({navigation}) {
             <Text style = {styles.header}>Welcome John!</Text>
             <View style = {styles.viewStyle}>
                 <Text style={{fontWeight: "bold", padding: 10, paddingBottom: 20}}>Email: johnomeara40@gmail.com</Text>
-                <TouchableOpacity onPress ={() => {navigation.navigate("Login")}} className='flex flex-row h-auto w-full items-center justify-center rounded-sm p-1 text-base font-medium shadow-none transition-colors border border-[#d1d5db] bg-black'>
+                <TouchableOpacity onPress ={() => {navigation.navigate("Signup")}} className='flex flex-row h-auto w-full items-center justify-center rounded-sm p-1 text-base font-medium shadow-none transition-colors border border-[#d1d5db] bg-black'>
                     <Text className='font-extrabold my-1 color-white'>
                         Create New Account
                     </Text>
