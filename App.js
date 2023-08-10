@@ -14,12 +14,12 @@ import CustomDrawer from './components/CustomDrawer';
 import {Svg, Path} from 'react-native-svg'
 function StackScreen() {
   return (
-    <Drawer.Navigator drawerContent = {props => <CustomDrawer {...props}/>}screenOptions={{headerShown:true, drawerLabelStyle:{marginLeft: -20}, drawerActiveBackgroundColor: "lightblue", drawerActiveTintColor: "white"}}>
+    <Drawer.Navigator drawerContent = {props => <CustomDrawer {...props}/>}screenOptions={{headerShown:true, drawerLabelStyle:{marginLeft: -20}, drawerActiveBackgroundColor: "lightblue", drawerActiveTintColor: "#5494DA"}}>
       <Drawer.Screen name="Home" component={HomeScreen} options={{
         drawerIcon: () => {
           return (
-            <Svg fill='grey' viewBox='0 0 256 256' className='w-6 h-6' width='20' height ="20">
-              <Path d='M152,208V160a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v48a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V115.54a8,8,0,0,1,2.62-5.92l80-75.54a8,8,0,0,1,10.77,0l80,75.54a8,8,0,0,1,2.62,5.92V208a8,8,0,0,1-8,8H160A8,8,0,0,1,152,208Z'></Path>
+            <Svg fill="grey" viewBox='0 0 256 256' className='w-6 h-6' width='20' height ="20">
+              <Path d='M217.47,105.24l-80-75.5-.09-.08a13.94,13.94,0,0,0-18.83,0l-.09.08-80,75.5A14,14,0,0,0,34,115.55V208a14,14,0,0,0,14,14H96a14,14,0,0,0,14-14V160a2,2,0,0,1,2-2h32a2,2,0,0,1,2,2v48a14,14,0,0,0,14,14h48a14,14,0,0,0,14-14V115.55A14,14,0,0,0,217.47,105.24ZM210,208a2,2,0,0,1-2,2H160a2,2,0,0,1-2-2V160a14,14,0,0,0-14-14H112a14,14,0,0,0-14,14v48a2,2,0,0,1-2,2H48a2,2,0,0,1-2-2V115.55a2,2,0,0,1,.65-1.48l.09-.08,79.94-75.48a2,2,0,0,1,2.63,0L209.26,114l.08.08a2,2,0,0,1,.66,1.48Z'></Path>
             </Svg>
           )
           
