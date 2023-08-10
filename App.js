@@ -14,7 +14,7 @@ import CustomDrawer from './components/CustomDrawer';
 import {Svg, Path} from 'react-native-svg'
 function StackScreen() {
   return (
-    <Drawer.Navigator drawerContent = {props => <CustomDrawer {...props}/>}screenOptions={{headerShown:true, drawerLabelStyle:{marginLeft: -20}, drawerActiveBackgroundColor: "#ADD8E6", drawerActiveTintColor: "#5494DA"}}>
+    <Drawer.Navigator drawerContent = {props => <CustomDrawer {...props}/>}screenOptions={{headerShown:true, drawerLabelStyle:{marginLeft: -20}, drawerActiveTintColor: "#5494DA"}}>
       <Drawer.Screen name="Home" component={HomeScreen} options={{
         drawerIcon: (tabInfo) => {
           return (
