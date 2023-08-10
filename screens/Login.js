@@ -52,7 +52,7 @@ export default function Login ({ navigation }) {
           const json = await resp.json()
           const accessGranted = typeof json['idToken'] !== 'undefined'
           if (accessGranted) {
-            navigation.navigate('Home')
+            navigation.navigate('StackScreen')
           } else {
             setShowErrorMassage(true)
           }

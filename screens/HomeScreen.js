@@ -1,17 +1,22 @@
-import { View, StatusBar, KeyboardAvoidingView, Platform } from 'react-native'
+import { View, StatusBar, KeyboardAvoidingView, Platform, Text } from 'react-native'
 import React from 'react'
-import HomeNav from '../components/HomeNav'
 import ChatContents from '../components/ChatContents'
 import DynamicMessageRow from '../components/DynamicMessageRow'
+import {GestureHandlerRootView, Swipeable} from "react-native-gesture-handler"
 import {
   SafeAreaProvider,
   useSafeAreaInsets
 } from 'react-native-safe-area-context'
-
+const LeftActions = () => {
+  <View>
+    <Text>Hi</Text>
+  </View>
+}
 const CustomStatusBar = ({ backgroundColor, barStyle = 'dark-content' }) => {
   const insets = useSafeAreaInsets()
 
   return (
+
     <View style={{ height: insets.top - 10, backgroundColor }}>
       <StatusBar
         animated={true}
@@ -23,6 +28,7 @@ const CustomStatusBar = ({ backgroundColor, barStyle = 'dark-content' }) => {
 }
 
 function HomeScreen ({ navigation }) {
+
   const chatRef = React.useRef()
 
   const [sendMessage, setSendMessage] = React.useState()
@@ -36,27 +42,30 @@ function HomeScreen ({ navigation }) {
   }, [])
 
   return (
-    <KeyboardAvoidingView
-      className='flex-1'
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-    >
-      <SafeAreaProvider>
-        <CustomStatusBar backgroundColor='#fff' />
-        <View className='flex-1 flex max-h-screen flex-col overflow-hidden'>
-          <HomeNav navigation={navigation} />
+    
+        <KeyboardAvoidingView
+          className='flex-1'
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        >
+          <SafeAreaProvider>
+            <CustomStatusBar backgroundColor='#fff' />
+            <View className='flex-1 flex max-h-screen flex-col overflow-hidden'>
+          
 
-          <View className='flex flex-col flex-1'>
-            <ChatContents ref={chatRef}/>
-            <DynamicMessageRow
-              sendMessage={sendMessage}
-              scrollToEnd={scrollToEnd}
-              newChat={newChat}
-              navigation={navigation}
-            />
-          </View>
-        </View>
-      </SafeAreaProvider>
-    </KeyboardAvoidingView>
+              <View className='flex flex-col flex-1'>
+                <ChatContents ref={chatRef}/>
+                <DynamicMessageRow
+                  sendMessage={sendMessage}
+                  scrollToEnd={scrollToEnd}
+                  newChat={newChat}
+                  navigation={navigation}
+                />
+              </View>
+            </View>
+          </SafeAreaProvider>
+        </KeyboardAvoidingView>
+
+
   )
 }
 
