@@ -1,5 +1,5 @@
 import react from "react";
-import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity, Switch} from 'react-native';
 import { Svg, Path } from 'react-native-svg';
 
 
@@ -8,17 +8,17 @@ export default function Settings({navigation}) {
         <View>
             <Text style = {styles.header}>Welcome John!</Text>
             <View style = {styles.viewStyle}>
-                <Text style = {styles.textStyle}>Log Out</Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                <Svg  
-                    width={32}
-                    height={32}
-                    viewBox='0 0 256 256'
-                    strokeWidth={2}
-                    className='fill-blue-500 stroke-blue-500'
-                    >
-                    <Path d='M112,216a8,8,0,0,1-8,8H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32h56a8,8,0,0,1,0,16H48V208h56A8,8,0,0,1,112,216Zm109.66-93.66-40-40a8,8,0,0,0-11.32,11.32L196.69,120H104a8,8,0,0,0,0,16h92.69l-26.35,26.34a8,8,0,0,0,11.32,11.32l40-40A8,8,0,0,0,221.66,122.34Z'></Path>
-                    </Svg>
+                <Text style={{fontWeight: "bold", padding: 10, paddingBottom: 20}}>Email: johnomeara40@gmail.com</Text>
+                <TouchableOpacity onPress ={() => {navigation.navigate("Login")}} className='flex flex-row h-auto w-full items-center justify-center rounded-sm p-1 text-base font-medium shadow-none transition-colors border border-[#d1d5db] bg-black'>
+                    <Text className='font-extrabold my-1 color-white'>
+                        Create New Account
+                    </Text>
+                </TouchableOpacity>
+                <Text></Text>
+                <TouchableOpacity onPress ={() => {navigation.navigate("Login")}} className='flex flex-row h-auto w-full items-center justify-center rounded-sm p-1 text-base font-medium shadow-none transition-colors border border-[#d1d5db] bg-white'>
+                    <Text className='font-extrabold my-1'>
+                        Log Out
+                    </Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     header: {
-        alignSelf: 'auto',
+        alignSelf: 'center',
         padding: 30,
         paddingBottom: 0,
         fontWeight: 'bold',
