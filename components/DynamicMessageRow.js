@@ -1,14 +1,58 @@
 import React from 'react'
-import { View, TouchableOpacity, TextInput, Keyboard, Text, ScrollView } from 'react-native'
+import {
+  View,
+  TouchableOpacity,
+  TextInput,
+  Keyboard,
+  Text,
+  ScrollView,
+  FlatList,
+  Image
+} from 'react-native'
 import { Svg, Path } from 'react-native-svg'
 import { useEffect, useState } from 'react'
+import * as ImagePicker from 'expo-image-picker'
 
-
-export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat, navigation }) {
+export default function DynamicMessageRow ({
+  sendMessage,
+  scrollToEnd,
+  newChat,
+  navigation
+}) {
   const [collapsed, setCollapsed] = React.useState(false)
   const [currentlyRecieving, setCurrentlyRecieving] = React.useState(false)
   const [disabled, setDisabled] = React.useState(true)
+  const [currentlyProcessingImage, setCurrentlyProcessingImage] =
+    React.useState(false)
+  const [inputPrefix, setInputPrefix] = React.useState('')
   const [textInputValue, setTextInputValue] = React.useState('')
+  const [images, setImages] = React.useState([])
+
+  const pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 4],
+      quality: 1,
+      base64: true
+    })
+    setCurrentlyProcessingImage(true)
+
+    setImages([...images, result['uri']])
+
+    const url =
+      'https://ferrum.serveo.net/gen_report?img=' +
+      encodeURIComponent(result['base64'])
+    const resp = await fetch(url)
+    const text = await resp.text()
+    setInputPrefix(
+      inputPrefix +
+        "My Doctor's Radiology Report: " +
+        text +
+        '\nPlease help me interpret it.&*&*&*\n'
+    )
+    setCurrentlyProcessingImage(false)
+  }
 
   const onTextInputChange = value => {
     setTextInputValue(value)
@@ -32,8 +76,10 @@ export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat, 
   const sendCurrentMessage = async () => {
     if (!disabled) {
       setCurrentlyRecieving(true)
-      const valueTemp = textInputValue
+      const valueTemp = inputPrefix + textInputValue
+      setImages([])
       setTextInputValue('')
+      setInputPrefix('')
       setDisabled(true)
       await sendMessage(valueTemp)
       setCurrentlyRecieving(false)
@@ -66,15 +112,35 @@ export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat, 
     }
   })
 
-
   return (
     <View>
       <View
-        className={'mx-auto w-full bg-white ' + (isKeyboardOpen ? "pb-0" : "pb-4")}
+        className={
+          'flex flex-col mx-auto w-full bg-white ' + (isKeyboardOpen ? 'pb-0' : 'pb-4')
+        }
       >
+        {
+          images.length > 0 && <FlatList
+          data={images}
+          className='p-2 px-0 border-t border-gray-300'
+          horizontal={true}
+          renderItem={({item}) => <Image
+          source={{
+            uri: item
+          }}
+          style={{
+            width: 75,
+            height: 75,
+            borderRadius: 10,
+            overflow: 'hidden'
+          }}
+          className="ml-2"
+        />}
+          keyExtractor={item => item}
+        />
+        }
         <View className='space-y-4 border-t border-gray-300 p-2'>
           <View className='bg-background relative flex max-h-60 w-full grow flex-row overflow-hidden items-center gap-2'>
-            
             {collapsed && (
               <TouchableOpacity onPress={show}>
                 <View className='bg-gray-200 p-2 rounded-full opacity-40'>
@@ -93,9 +159,9 @@ export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat, 
                 </View>
               </TouchableOpacity>
             )}
-            
+
             {!collapsed && (
-              <TouchableOpacity>
+              <TouchableOpacity onPress={pickImage}>
                 <View className='bg-gray-200 p-2 rounded-full opacity-40'>
                   <Svg fill='#000000' viewBox='0 0 256 256' className='w-6 h-6'>
                     <Path d='M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,48H208v77.38l-24.69-24.7a16,16,0,0,0-22.62,0L53.37,208H48ZM208,208H76l96-96,36,36v60ZM96,120A24,24,0,1,0,72,96,24,24,0,0,0,96,120Zm0-32a8,8,0,1,1-8,8A8,8,0,0,1,96,88Z'></Path>
@@ -103,7 +169,7 @@ export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat, 
                 </View>
               </TouchableOpacity>
             )}
-            
+
             <View className=' bg-gray-200 rounded-xl p-2 opacity-60 flex-1 overflow-hidden'>
               <TextInput
                 placeholder='Send a message.'
@@ -112,7 +178,7 @@ export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat, 
                 value={textInputValue}
               ></TextInput>
             </View>
-            
+
             <TouchableOpacity
               onPress={sendCurrentMessage}
               disabled={disabled || currentlyRecieving}
@@ -120,7 +186,9 @@ export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat, 
               <View
                 className={
                   'bg-blue-400 p-2 rounded-full ' +
-                  (!disabled && !currentlyRecieving ? '' : 'opacity-50')
+                  (!disabled && !currentlyRecieving && !currentlyProcessingImage
+                    ? ''
+                    : 'opacity-50')
                 }
               >
                 <View className='w-6 h-6 flex justify-center'>
@@ -135,7 +203,6 @@ export default function DynamicMessageRow ({ sendMessage, scrollToEnd, newChat, 
                 </View>
               </View>
             </TouchableOpacity>
-            
           </View>
         </View>
       </View>

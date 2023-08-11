@@ -5,7 +5,7 @@ export default function CustomDrawer(props) {
     return (
         <View style = {{flex: 1}}>
             <DrawerContentScrollView {...props} contentContainerStyle={{backgroundColor: "white"}}>
-                <Text style ={{padding: 15, fontWeight: 'bold', alignSelf: "auto"}}>Welcome, Demo User!</Text>
+                <Text style ={{padding: 15, fontWeight: 'bold', alignSelf: "auto"}}>Welcome, John!</Text>
                 <DrawerItemList {...props}/>
             </DrawerContentScrollView>
         </View>
