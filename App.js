@@ -3,7 +3,6 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen';
 import HowTo from './screens/HowTo';
-import Conversations from './screens/Conversations';
 import Articles from './screens/Articles';
 import Login from './screens/Login';
 import Signup from './screens/Signup';
@@ -31,17 +30,6 @@ function StackScreen() {
           return (
             <Svg fill={tabInfo.color} viewBox='0 0 256 256' className='w-6 h-6' width='20' height ="20">
               <Path d='M138,180a10,10,0,1,1-10-10A10,10,0,0,1,138,180ZM128,74c-21,0-38,15.25-38,34v4a6,6,0,0,0,12,0v-4c0-12.13,11.66-22,26-22s26,9.87,26,22-11.66,22-26,22a6,6,0,0,0-6,6v8a6,6,0,0,0,12,0v-2.42c18.11-2.58,32-16.66,32-33.58C166,89.25,149,74,128,74Zm102,54A102,102,0,1,1,128,26,102.12,102.12,0,0,1,230,128Zm-12,0a90,90,0,1,0-90,90A90.1,90.1,0,0,0,218,128Z'></Path>
-            </Svg>
-          )
-          
-
-        } 
-      }}/>
-      <Drawer.Screen name="Past Conversations" component={Conversations} options= {{
-        drawerIcon: (tabInfo) => {
-          return (
-            <Svg fill={tabInfo.color} viewBox='0 0 256 256' className='w-6 h-6' width='20' height ="20">
-              <Path d='M184,34H72A14,14,0,0,0,58,48V224a6,6,0,0,0,9.18,5.09l60.81-38,60.83,38A6,6,0,0,0,198,224V48A14,14,0,0,0,184,34Zm2,179.17-54.83-34.26a6,6,0,0,0-6.36,0L70,213.17V48a2,2,0,0,1,2-2H184a2,2,0,0,1,2,2Z'></Path>
             </Svg>
           )
           
