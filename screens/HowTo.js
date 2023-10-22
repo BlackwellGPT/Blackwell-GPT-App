@@ -25,9 +25,12 @@ export default function HowTo() {
 
                   <Text style = {styles.question}>Q: What is Blackwell GPT trained on? </Text>   
                   <Text></Text>
-                  <Text style = {styles.answer}> A: Blackwell GPT is trained on thousands of real conversations between doctors and patients. It uses a base GPT-3.5-Turbo model from Open AI.</Text>      
-
-
+                  <Text style = {styles.answer}> A: Blackwell GPT is trained on over 100,000 real conversations between doctors and patients. It uses a base Llama 2 model from Meta.</Text>      
+                  <Text></Text>
+                  <Text style = {styles.question}>Q: How did we get our name? </Text>   
+                  <Text></Text>
+                  <Text style = {styles.answer}> A: Our name is inspired by Elizabeth Blackwell, the first female doctor.</Text>      
+                  <Text></Text>
 
                 </View>
 
