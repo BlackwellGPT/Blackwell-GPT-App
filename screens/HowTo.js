@@ -9,7 +9,7 @@ export default function HowTo() {
   ];
   
   return (
-    <View style = {{backgroundColor:'white'}}>
+    <View style = {{backgroundColor:'white', flex: 1}}>
       <FlatList 
             data = {data} 
             renderItem={() => {
