@@ -6,7 +6,7 @@ import { Svg, Path } from 'react-native-svg';
 export default function Settings({navigation}) {
     return (
         <View>
-            <Text style = {styles.header}>Welcome, John!</Text>
+            <Text style = {styles.header}>Welcome John!</Text>
             <View style = {styles.viewStyle}>
                 <Text style={{fontWeight: "bold", padding: 10, paddingBottom: 20}}>Email: johnomeara40@gmail.com</Text>
                 <TouchableOpacity onPress ={() => {navigation.navigate("Signup")}} className='flex flex-row h-auto w-full items-center justify-center rounded-sm p-1 text-base font-medium shadow-none transition-colors border border-[#d1d5db] bg-black'>
@@ -31,11 +31,10 @@ const styles = StyleSheet.create({
         backgroundWidth: 2,
         margin: 30,
         padding: 20,
-        borderWidth: 1,
-        borderRadius: 5,
+        borderWidth: 2,
+        borderRadius: 10,
         borderColor: '#5494DA',
         borderStyle: 'dashed',
-        flex: 1
 
     },
     textStyle: {
