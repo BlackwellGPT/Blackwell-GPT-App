@@ -16,7 +16,7 @@ export default function HowTo() {
               return (
                 <View>
 
-                  <View style = {styles.viewStyle}> 
+                  <View style = {styles.viewStyle} className="border-grey-100"> 
           
                     <Text style = {styles.bodyText}>To use Blackwell GPT, use the message field (accepts voice and text input) located in the bottom bar of the homepage. You can also click on the image button to its left, which accepts images of lung x-rays and can identify if your lungs are healthy.</Text>
                     <Text style = {styles.bodyText}>Use the drawer menu to access past convos, interesting health articles, the usage guide, and settings.</Text>
@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
     marginRight: 30,
     backgroundColor: 'white',
     borderRadius: 4,
-    borderColor: 'gray',
     borderWidth: 2,
     borderStyle: 'dashed'
 
