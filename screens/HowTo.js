@@ -11,11 +11,10 @@ export default function HowTo() {
   return (
     <View style = {{backgroundColor:'white'}}>
       <FlatList 
-      style={{flex: 1}}
             data = {data} 
             renderItem={() => {
               return (
-                <View style={{backgroundColor: "#f1f5f9", flex: 1}}>
+                <View>
 
                   <View style = {styles.viewStyle}> 
           
