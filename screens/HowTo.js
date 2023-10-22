@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     marginRight: 30,
     backgroundColor: 'white',
     borderRadius: 4,
-    borderColor: 'black',
+    borderColor: 'gray',
     borderWidth: 2,
     borderStyle: 'dashed'
 
