@@ -11,6 +11,7 @@ export default function HowTo() {
   return (
     <View style = {{backgroundColor:'white'}}>
       <FlatList 
+      style={{flex: 1}}
             data = {data} 
             renderItem={() => {
               return (
