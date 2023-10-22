@@ -9,12 +9,13 @@ import Login from './screens/Login';
 import Signup from './screens/Signup';
 import Settings from './screens/Settings'
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import * as NavigationBar from 'expo-navigation-bar';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CustomDrawer from './components/CustomDrawer';
 import {Svg, Path} from 'react-native-svg'
 function StackScreen() {
   return (
-    <Drawer.Navigator drawerContent = {props => <CustomDrawer {...props}/>}screenOptions={{headerShown:true, drawerType: "slide", drawerLabelStyle:{marginLeft: -20}, drawerActiveTintColor: "#5494DA"}}>
+    <Drawer.Navigator drawerContent = {props => <CustomDrawer {...props}/>}screenOptions={{headerShown:true, drawerType: "slide", drawerLabelStyle:{marginLeft: -20}, drawerActiveTintColor: "#5494DA", lazy: false}}>
       <Drawer.Screen name="Home" component={HomeScreen} options={{
         drawerIcon: (tabInfo) => {
           return (
@@ -82,6 +83,9 @@ const Stack = createNativeStackNavigator();
 import { LogBox } from 'react-native';
 LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
 LogBox.ignoreAllLogs();//Ignore all log notifications
+
+NavigationBar.setBackgroundColorAsync("white");
+NavigationBar.setButtonStyleAsync("dark");
 
 function App() {
   return (
